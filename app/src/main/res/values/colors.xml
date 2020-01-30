@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App base colours. -->
+    <color name="colorPrimary">#373740</color>
+    <color name="colorPrimaryDark">#27272F</color>
+    <color name="colorAccent">#4E9AC1</color>
+    <color name="colorBackground">#32333D</color>
+
+    <!-- Colours for text. -->
+    <color name="colorTextPrimary">#FFFFFF</color>
+    <color name="colorTextSecondary">#A7A7AA</color>
+    <color name="colorTextCaption">#84848A</color>
+
+    <!-- Colors for edit text fields -->
+    <color name="colorEditTextBg">#23242B</color>
+</resources>

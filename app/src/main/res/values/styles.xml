@@ -1,0 +1,25 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!-- Background color of buttons in the app -->
+        <item name="colorButtonNormal">@color/colorPrimary</item>
+    </style>
+
+<!--    <style name="AppTheme.TransparentTheme">-->
+<!--        <item name="android:windowDrawsSystemBarBackgrounds">true</item>-->
+<!--        &lt;!&ndash;<item name="android:statusBarColor">@android:color/transparent</item>&ndash;&gt;-->
+<!--        <item name="android:windowTranslucentStatus">true</item>-->
+<!--    </style>-->
+
+    <style name="Message" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:fontFamily">sans-serif-condensed</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_marginTop">4dp</item>
+    </style>
+
+</resources>

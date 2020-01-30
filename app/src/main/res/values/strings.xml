@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Chat</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign up</string>
+    <string name="username">Username</string>
+    <string name="app_name_fancy">Chat.</string>
+    <string name="conversations_icon_description">Two chat bubbles.</string>
+    <string name="conversations_startup">Why not start a conversation, click the button in the bottom right to start chatting.</string>
+    <string name="conversations_fab">New chat</string>
+</resources>
