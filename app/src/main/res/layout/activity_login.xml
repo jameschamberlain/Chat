@@ -54,7 +54,8 @@
                     android:textColor="@android:color/white"
                     android:id="@+id/login_button"
                     android:layout_marginStart="48dp"
-                    android:fontFamily="sans-serif-condensed-medium"/>
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:backgroundTint="@color/colorAccent"/>
 
                 <com.google.android.material.button.MaterialButton
                     android:layout_width="128dp"
@@ -64,7 +65,8 @@
                     android:textColor="@android:color/white"
                     android:fontFamily="sans-serif-condensed-medium"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="48dp"/>
+                    android:layout_marginEnd="48dp"
+                    android:backgroundTint="@color/colorAccent"/>
         </RelativeLayout>
     </LinearLayout>
 </RelativeLayout>

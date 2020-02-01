@@ -4,7 +4,8 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="88dp"
-    android:baselineAligned="false">
+    android:baselineAligned="false"
+    android:background="@color/colorBackground">
 
     <FrameLayout
         android:id="@+id/image_layout"
@@ -15,20 +16,21 @@
         android:layout_gravity="center">
 
         <ImageView
-            android:id="@+id/profile_pic"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:layout_gravity="center"
-            android:scaleType="fitXY"
-            android:src="@drawable/sample_profile_pic"/>
-
-        <ImageView
             android:layout_width="56dp"
             android:layout_height="56dp"
             android:layout_gravity="center"
             android:adjustViewBounds="true"
             android:scaleType="fitXY"
-            android:src="@drawable/img_mask" />
+            android:src="@drawable/user_bg" />
+
+        <ImageView
+            android:id="@+id/profile_pic"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:padding="8dp"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_person"/>
 
     </FrameLayout>
 

@@ -132,8 +132,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_message" />
-                            <entry key="sourceFile" value="C:\Users\James\Desktop\message-24px.svg" />
+                            <entry key="outputName" value="ic_person" />
+                            <entry key="sourceFile" value="C:\Users\James\Desktop\person-24px.svg" />
                           </map>
                         </option>
                       </PersistentState>
