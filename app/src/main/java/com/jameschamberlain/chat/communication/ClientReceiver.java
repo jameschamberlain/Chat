@@ -1,18 +1,14 @@
-package com.jameschamberlain.chat;
+package com.jameschamberlain.chat.communication;
 
-import android.app.Activity;
-import android.content.Context;
 import android.os.Handler;
-import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
-import android.widget.Toast;
-
-import androidx.annotation.NonNull;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.net.SocketException;
+import java.util.Arrays;
+import java.util.List;
 
 // Gets messages from other clients via the server (by the
 // ServerSender thread).
@@ -49,15 +45,27 @@ public class ClientReceiver implements Runnable {
         try {
 
             while (true) {
-                String s = server.readLine(); // Matches FFFFF in ServerSender.java
-                if (s == null) {
+                String code = server.readLine(); // Matches FFFFF in ServerSender.java
+                if (code == null) {
                     throw new NullPointerException();
                 }
 
-                Log.i(LOG_TAG, s);
+                String contents = server.readLine();
+
+                if (contents == null) {
+                    throw new NullPointerException();
+                }
+
+                if (contents == null) {
+                    throw new NullPointerException();
+                }
+
+                String user = server.readLine();
+
+                List<String> serverResponse = Arrays.asList(code, contents, user);
                 Message msg = handler.obtainMessage();
                 msg.what = 1;
-                msg.obj = s;
+                msg.obj = serverResponse;
                 handler.sendMessage(msg);
             }
         }

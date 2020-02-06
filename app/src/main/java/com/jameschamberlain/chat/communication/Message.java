@@ -1,4 +1,4 @@
-package com.jameschamberlain.chat;
+package com.jameschamberlain.chat.communication;
 
 public final class Message {
 

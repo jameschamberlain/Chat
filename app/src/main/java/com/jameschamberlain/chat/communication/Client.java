@@ -1,4 +1,4 @@
-package com.jameschamberlain.chat;
+package com.jameschamberlain.chat.communication;
 
 import android.os.Handler;
 import android.util.Log;
@@ -10,7 +10,7 @@ import java.io.PrintStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-class Client {
+public class Client {
 
     /** Tag for the log messages */
     private static final String LOG_TAG = Client.class.getSimpleName();
@@ -26,14 +26,14 @@ class Client {
     /**
      * Constructs a new client
      */
-    Client(Handler handler) {
+    public Client(Handler handler) {
         this.handler = handler;
     }
 
     /**
      * Constructs a new client
      */
-    Client() {
+    public Client() {
     }
 
     /**
@@ -64,7 +64,7 @@ class Client {
      *
      * @param username  The username of the client
      */
-    boolean attemptLogin(String username) {
+    public boolean attemptLogin(String username) {
 
         setupInitialConnection();
 
@@ -91,7 +91,7 @@ class Client {
      *
      * @param username  The username of the client
      */
-    void attemptSignUp(String username) {
+    public void attemptSignUp(String username) {
 
 //        setupInitialConnection();
 //
@@ -121,7 +121,7 @@ class Client {
     }
 
 
-    void startClientThreads() {
+    public void startClientThreads() {
         // Create and start the two client threads.
         clientSender = new ClientSender(toServer);
         Thread sender = new Thread(clientSender);
@@ -150,7 +150,7 @@ class Client {
     }
 
 
-    public static ClientSender getClientSender() {
+    public ClientSender getClientSender() {
         return clientSender;
     }
 }

@@ -1,17 +1,13 @@
 package com.jameschamberlain.chat;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Looper;
 import android.text.InputType;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -19,8 +15,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.jameschamberlain.chat.communication.Client;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -60,22 +55,29 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void completeLogin() {
-        Looper.prepare();
-        Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_LONG).show();
         Intent intent = new Intent(LoginActivity.this, ConversationsActivity.class);
+        intent.putExtra("isNewLogin", true);
         startActivity(intent);
     }
 
-    private class startClientTask extends AsyncTask<Void, Void, Void> {
+    private class startClientTask extends AsyncTask<Void, Void, Boolean> {
 
         @Override
-        protected Void doInBackground(Void... voids) {
-            client = new Client();
-            boolean isLoggedIn = client.attemptLogin(username);
+        protected void onPostExecute(Boolean isLoggedIn) {
             if (isLoggedIn) {
+                SharedPreferences preferences = getSharedPreferences("com.jameschamberlain.chat", MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString("username", username);
+                editor.putBoolean("logged_in", true);
+                editor.apply();
                 completeLogin();
             }
-            return null;
+        }
+
+        @Override
+        protected Boolean doInBackground(Void... voids) {
+            client = new Client();
+            return client.attemptLogin(username);
         }
     }
 

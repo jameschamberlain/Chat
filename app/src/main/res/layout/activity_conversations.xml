@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground">
+    android:background="@color/colorBackground"
+    android:theme="@android:style/ThemeOverlay.Material.Dark">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
@@ -28,6 +29,17 @@
                 android:textSize="32sp" />
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
+
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="20dp"-->
+<!--        android:layout_below="@id/appbar"-->
+<!--        android:background="#F44336"-->
+<!--        android:text="Not Connected"-->
+<!--        android:id="@+id/connection_status"-->
+<!--        android:textAlignment="center"-->
+<!--        android:fontFamily="sans-serif-condensed-medium"-->
+<!--        android:translationZ="1dp"/>-->
 
 
     <androidx.recyclerview.widget.RecyclerView

@@ -1,9 +1,6 @@
-package com.jameschamberlain.chat;
+package com.jameschamberlain.chat.communication;
 
-import android.app.Activity;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -30,8 +27,9 @@ public class ClientSender implements Runnable {
     private boolean shouldBreak = false;
 
     private boolean messageReady = false;
+    private String code;
     private String recipient;
-    private String message;
+    private String contents;
 
 
     /**
@@ -58,9 +56,17 @@ public class ClientSender implements Runnable {
             while (!shouldBreak) {
 
                 if (messageReady) {
-                    server.println("send");      // Matches YYYYY in ClientSender.java
-                    server.println(recipient);    // Matches CCCCC in ServerReceiver
-                    server.println(message);      // Matches DDDDD in ServerReceiver
+
+                    if (code.equals("add_user_request")) {
+                        server.println(code);      // Matches YYYYY in ClientSender.java
+                        server.println(contents);      // Matches DDDDD in ServerReceiver
+                    }
+                    else {
+                        server.println(code);      // Matches YYYYY in ClientSender.java
+                        server.println(recipient);    // Matches CCCCC in ServerReceiver
+                        server.println(contents);      // Matches DDDDD in ServerReceiver
+                    }
+
                     messageReady = false;
                 }
             }
@@ -72,9 +78,17 @@ public class ClientSender implements Runnable {
 
     }
 
-    void sendMessage(String recipient, String message) {
+    public void sendMessage(String recipient, String contents) {
+        this.code = "send";
         this.recipient = recipient;
-        this.message = message;
+        this.contents = contents;
+        this.messageReady = true;
+    }
+
+    public void addUser(String contents) {
+        this.code = "add_user_request";
+        this.recipient = "";
+        this.contents = contents;
         this.messageReady = true;
     }
 

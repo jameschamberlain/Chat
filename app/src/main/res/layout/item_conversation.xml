@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="88dp"
     android:baselineAligned="false"
-    android:background="@color/colorBackground">
+    android:background="?android:attr/selectableItemBackground"
+    android:id="@+id/parent_layout"
+    android:theme="@android:style/ThemeOverlay.Material.Dark">
 
     <FrameLayout
         android:id="@+id/image_layout"
@@ -52,7 +54,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:text="I'll pick you up at 5"
+            android:text="Start a conversation!"
             android:fontFamily="sans-serif-condensed"
             android:textSize="16sp"
             android:id="@+id/latest_message"/>
