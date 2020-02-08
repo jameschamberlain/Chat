@@ -132,8 +132,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_004_speech_bubble" />
-                            <entry key="sourceFile" value="C:\Users\James\Desktop\2258780-communication\2258780-communication\svg\004-speech bubble.svg" />
+                            <entry key="outputName" value="ic_send" />
+                            <entry key="sourceFile" value="C:\Users\James\Desktop\send-24px.svg" />
                           </map>
                         </option>
                       </PersistentState>

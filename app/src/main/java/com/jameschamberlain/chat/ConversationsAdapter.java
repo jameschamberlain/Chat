@@ -7,6 +7,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -14,9 +15,11 @@ import java.util.ArrayList;
 public class ConversationsAdapter extends RecyclerView.Adapter<ConversationsAdapter.ViewHolder> {
 
     private ArrayList<String> users;
+    private AppCompatActivity parentActivity;
 
-    public ConversationsAdapter(ArrayList<String> users) {
+    public ConversationsAdapter(ArrayList<String> users, AppCompatActivity activity) {
         this.users = users;
+        this.parentActivity = activity;
     }
 
     @NonNull
@@ -30,6 +33,7 @@ public class ConversationsAdapter extends RecyclerView.Adapter<ConversationsAdap
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         String currentUser = users.get(position);
         holder.name.setText(currentUser);
+        holder.parentLayout.setOnClickListener(new UserOnClickListener(currentUser, parentActivity));
     }
 
     @Override

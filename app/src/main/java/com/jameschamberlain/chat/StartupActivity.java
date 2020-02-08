@@ -25,7 +25,8 @@ public class StartupActivity extends AppCompatActivity {
 
         if (preferences.getBoolean("logged_in", false)) {
             username = preferences.getString("username", null);
-            new startClientTask().execute();
+//            new startClientTask().execute();
+            completeLogin();
         }
         else {
             Intent intent = new Intent(this, LoginActivity.class);
@@ -36,7 +37,8 @@ public class StartupActivity extends AppCompatActivity {
 
     private void completeLogin() {
         Intent intent = new Intent(this, ConversationsActivity.class);
-        intent.putExtra("isNewLogin", false);
+        intent.putExtra("isFirstLogin", false);
+        intent.putExtra("username", username);
         startActivity(intent);
     }
 

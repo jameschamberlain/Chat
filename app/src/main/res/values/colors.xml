@@ -12,5 +12,9 @@
     <color name="colorTextCaption">#84848A</color>
 
     <!-- Colors for edit text fields -->
-    <color name="colorEditTextBg">#323232</color>
+    <color name="colorEditTextBg">#424242</color>
+
+    <!-- Colors for connection status -->
+    <color name="notConnected">#F44336</color>
+    <color name="connected">#4CAF50</color>
 </resources>

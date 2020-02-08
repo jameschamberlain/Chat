@@ -56,7 +56,8 @@ public class LoginActivity extends AppCompatActivity {
 
     private void completeLogin() {
         Intent intent = new Intent(LoginActivity.this, ConversationsActivity.class);
-        intent.putExtra("isNewLogin", true);
+        intent.putExtra("isFirstLogin", true);
+        intent.putExtra("username", username);
         startActivity(intent);
     }
 
